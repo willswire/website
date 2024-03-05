@@ -1,0 +1,31 @@
+deploy:
+  # use the latest node image from dockerhub
+  image: node:current
+  # an implicit stage provided by GitLab CI/CD
+  stage: deploy
+  # perform a "clean" install of necessary node packages.
+  # this is a best-practice as opposed to a simple "npm i"
+  script: 
+    - npm ci
+    - npx astro build
+    - npx wrangler pages deploy --project-name blog --branch $CI_COMMIT_REF_SLUG --commit-hash $CI_COMMIT_SHORT_SHA ./dist
+  # only run this deploy job in two scenarios:
+  # - when a commit it made on the main branch
+  # - when a MR is opened against the main branch
+  rules:
+    - if: $CI_COMMIT_REF_SLUG == 'main'
+      variables:
+        ENVIRONMENT: production
+        DEPLOY_URL: https://willswire.com
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main'
+      variables:
+        ENVIRONMENT: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+        DEPLOY_URL: https://$CI_COMMIT_REF_SLUG.blog-bnw.pages.dev
+  # the environment to associate with this CI/CD deployment job
+  # with a URL provided by the above rules section
+  environment:
+    name: $ENVIRONMENT
+    url: $DEPLOY_URL
+  # a resource group mapped to the corresponding environment
+  # prevents concurrent jobs from running against the same environment
+  resource_group: $ENVIRONMENT
