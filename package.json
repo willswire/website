@@ -1,0 +1,27 @@
+{
+  "name": "rapid-surf-66fb",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro build && wrangler pages dev ./dist",
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy ./dist",
+    "build-cf-types": "wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/cloudflare": "^9.0.2",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.1",
+    "astro": "^4.4.11",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240222.0",
+    "wrangler": "^3.30.1"
+  }
+}
