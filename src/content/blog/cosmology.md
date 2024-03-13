@@ -1,8 +1,8 @@
 ---
-title: 'Cosmology: mTLS in Big Bang'
-description: 'Getting started with my personal deployment of Big Bang'
-pubDate: 'Jul 07 2023'
-heroImage: '/cosmology.jpg'
+title: "Cosmology: mTLS in Big Bang"
+description: "Getting started with my personal deployment of Big Bang"
+pubDate: "Jul 07 2023"
+heroImage: "/cosmology.jpg"
 ---
 
 Working with Big Bang can be precarious. Especially when developing on a shared cluster with other team members. Recently, I created a [new project entitled Cosmology](https://gitlab.com/willswire/cosmology/-/tree/mtls), which serves as a playground for several of my personal "quests" in exploring novel functionality and features in [Platform One's Big Bang](https://repo1.dso.mil/big-bang/bigbang). To investigate my ideas and experiment on the cheap, I use the following:
@@ -11,7 +11,7 @@ Working with Big Bang can be precarious. Especially when developing on a shared 
 - Managed Kubernetes on [Symbiosis](https://symbiosis.host) (1/4th the cost of EKS on AWS!)
 - [Zarf](https://github.com/defenseunicorns/zarf) to package my configurations and deploy them to the cluster
 
-My first quest in this exploration of the cosmos is to secure access to my Big Bang cluster and its hosted applications. 
+My first quest in this exploration of the cosmos is to secure access to my Big Bang cluster and its hosted applications.
 
 ## 🛡️ Cloudflare Zero Trust
 
@@ -31,11 +31,11 @@ When updating the values in our Big Bang configurations, we provide the newly pr
 
 ## 💕 The feeling is mutual
 
-Now that we can establish secure, trusted communications between visitors and applications on our cluster, only one thing remains! Nothing currently prevents direct traffic to the public IP address of our Istio gateway. We must guarantee requests to our cluster come *only* from the Cloudflare network. This authentication becomes particularly important when employing the [Cloudflare Web Application Firewall (WAF)](https://blog.cloudflare.com/waf-for-everyone/) for shielding our services. Together with the WAF, we can ensure that *all traffic* is evaluated before receiving a response from our Istio gateway.
+Now that we can establish secure, trusted communications between visitors and applications on our cluster, only one thing remains! Nothing currently prevents direct traffic to the public IP address of our Istio gateway. We must guarantee requests to our cluster come _only_ from the Cloudflare network. This authentication becomes particularly important when employing the [Cloudflare Web Application Firewall (WAF)](https://blog.cloudflare.com/waf-for-everyone/) for shielding our services. Together with the WAF, we can ensure that _all traffic_ is evaluated before receiving a response from our Istio gateway.
 
 ![Will's Wire](https://assets.willswire.com/blog/cosmology-mtls/mtls.png)
 
-Enabling [Authenticated Origin Pulls/Mutual TLS](https://blog.cloudflare.com/protecting-the-origin-with-tls-authenticated-origin-pulls/) for the `tatooine.dev` domain is the first, crucial step for restricting traffic to our cluster. Like provisioning Origin CA certificates, this is simple via the administration portal in Cloudflare. If you're unfamiliar with the concept of mTLS, I highly suggest reading the following [blog post](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/) (yet another Cloudflare link). 
+Enabling [Authenticated Origin Pulls/Mutual TLS](https://blog.cloudflare.com/protecting-the-origin-with-tls-authenticated-origin-pulls/) for the `tatooine.dev` domain is the first, crucial step for restricting traffic to our cluster. Like provisioning Origin CA certificates, this is simple via the administration portal in Cloudflare. If you're unfamiliar with the concept of mTLS, I highly suggest reading the following [blog post](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/) (yet another Cloudflare link).
 
 On the other hand, configuring Istio within Big Bang to support mTLS is more involved. Although Istio supports mTLS [out-of-the-box](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#configure-a-mutual-tls-ingress-gateway), the Istio templates within the current version of upstream Big Bang ([v2.5.0](https://repo1.dso.mil/big-bang/bigbang/-/tree/2.5.0) at the time of this writing) does not. [^1]
 
@@ -81,4 +81,5 @@ By integrating Cloudflare's Zero Trust Network Access (ZTNA) with Big Bang, I ha
 In conclusion, this experiment has reinforced my commitment to staying at the forefront of safe and innovative software development practices. By combining the power of Big Bang and Cloudflare, I am confident in my ability to push the boundaries of cloud-native applications, ensuring robust security and optimal performance. I invite you to join me on this journey of continuous "space" exploration and experimentation as I build secure, scalable, and cutting-edge solutions in the ever-evolving landscape of technology!
 
 ---
+
 [^1]: An [issue](https://repo1.dso.mil/big-bang/bigbang/-/issues/777) ~~remains open on the Big Bang project~~ was recently resolved bringing support for `MUTUAL` configured gateways!

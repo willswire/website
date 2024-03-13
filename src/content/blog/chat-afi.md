@@ -1,8 +1,8 @@
 ---
-title: 'ChatAFI: Embedding Air Force Publications into ChatGPT'
-description: 'Exploring RAG and developing a ChatGPT plugin'
-pubDate: 'Aug 13 2023'
-heroImage: '/chat-afi.jpg'
+title: "ChatAFI: Embedding Air Force Publications into ChatGPT"
+description: "Exploring RAG and developing a ChatGPT plugin"
+pubDate: "Aug 13 2023"
+heroImage: "/chat-afi.jpg"
 ---
 
 > **January 2024**: The ChatAFI ChatGPT Plugin has been deprecated in favor of the latest update to [AFI Explorer](https://afiexplorer.com)
@@ -33,7 +33,7 @@ With all the necessary pieces in place, the embeddings for 1K+ publications now 
 
 ![Will's Wire](https://assets.willswire.com/blog/chatafi/plugin.png)
 
-Now that the embeddings are globally available via Cloudflare's network, making them *usable* is another story. Eventually creating an API which speaks directly with [AFI Explorer](tab:https://apps.apple.com/us/app/afi-explorer/id1564964107) is the goal, but to get this in the hands of users more quickly, I turned to [ChatGPT plugins](tab:https://openai.com/blog/chatgpt-plugins). Modifying the example linked from above, I created a [plugin](tab:https://gitlab.com/willswire/chat-afi/-/blob/v0.0.1/plugin) which is now publicly available for ChatGPT Plus subscribers. Simply visit the plugin store, install ChatAFI, and let me know what you think!
+Now that the embeddings are globally available via Cloudflare's network, making them _usable_ is another story. Eventually creating an API which speaks directly with [AFI Explorer](tab:https://apps.apple.com/us/app/afi-explorer/id1564964107) is the goal, but to get this in the hands of users more quickly, I turned to [ChatGPT plugins](tab:https://openai.com/blog/chatgpt-plugins). Modifying the example linked from above, I created a [plugin](tab:https://gitlab.com/willswire/chat-afi/-/blob/v0.0.1/plugin) which is now publicly available for ChatGPT Plus subscribers. Simply visit the plugin store, install ChatAFI, and let me know what you think!
 
 ## 🌐 The Future of AFI Explorer: AI-Powered and Beyond
 

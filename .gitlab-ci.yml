@@ -5,7 +5,7 @@ deploy:
   stage: deploy
   # perform a "clean" install of necessary node packages.
   # this is a best-practice as opposed to a simple "npm i"
-  script: 
+  script:
     - npm ci
     - npx astro build
     - npx wrangler pages deploy --project-name blog --branch $CI_COMMIT_REF_SLUG --commit-hash $CI_COMMIT_SHORT_SHA ./dist

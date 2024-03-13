@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import profileImage from '../../public/profile.jpg';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -13,7 +15,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>👨🏻‍💻 Will's Wire</h1>
+			<Image src={profileImage} alt="Will Walker" style="width: 200px !important;"/>
+			<h1>Will's Wire</h1>
 			<p>
 				My name is Will Walker. As a Software Developer, I specialize in DevOps technologies and currently work 
 				for the United States Air Force in delivering capabilities to USCYBERCOM. I push code to public repositories 
