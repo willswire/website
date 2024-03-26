@@ -15,3 +15,38 @@ const today = new Date();
 		font-size: 1rem;
 	}
 </style>
+<script>
+	// Object to keep track of keys being pressed
+	const keysPressed = { i: false, t: false, s: false };
+
+	// Function to play the sound
+	function playSound() {
+		// Replace 'its.mp3' with the actual path to your MP3 file
+		var audio = new Audio("its.mp3");
+		audio
+			.play()
+			.catch((error) => console.error("Error playing the sound:", error));
+	}
+
+	// Listen for keydown events (key being pressed down)
+	document.addEventListener("keydown", function (event) {
+		// Check if one of the required keys is pressed
+		if (event.key === "i" || event.key === "t" || event.key === "s") {
+			// Set the corresponding key in keysPressed to true
+			keysPressed[event.key] = true;
+
+			// Check if all required keys are pressed
+			if (keysPressed.i && keysPressed.t && keysPressed.s) {
+				playSound();
+			}
+		}
+	});
+
+	// Listen for keyup events (key being released)
+	document.addEventListener("keyup", function (event) {
+		// If one of the required keys is released, update keysPressed
+		if (event.key === "i" || event.key === "t" || event.key === "s") {
+			keysPressed[event.key] = false;
+		}
+	});
+</script>
