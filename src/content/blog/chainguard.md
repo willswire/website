@@ -41,7 +41,7 @@ I started wondering how easy it would be to replace the container images in Big 
 
 ### 🔭 Find & Replace
 
-In the [latest version of Cosmology](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml), I have replaced enough of the Big Bang core images (Istio, Kyverno, Monitoring, Metrics Server, etc.) to no longer depend on Iron Bank images for my simple experiments and side-quests. Because Chainguard provides `latest` images for free, sometimes your Helm charts are subject to [breaking](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml#L150) due to conflicting arguments and software versions. For my personal development efforts, this is a small price to pay for unlocking the ability to do multiple Big Bang deployments, something Iron Bank still needs to support.
+In the [latest version of Cosmology](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml), I have replaced enough of the Big Bang core images (Istio, Kyverno, Monitoring, Metrics Server, etc.) to no longer depend on Iron Bank images for my simple experiments and side-quests. Because Chainguard provides `latest` images for free, sometimes your Helm charts are subject to [breaking](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml#L150) due to conflicting arguments and software versions. For my personal development efforts, this is a small price to pay for unlocking the ability to do multi-arch Big Bang deployments, something Iron Bank is still developing support for.
 
 ### 👨🏻‍🍳 Cheffing Up Images
 
