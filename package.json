@@ -13,15 +13,15 @@
     "build-cf-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
-    "@astrojs/cloudflare": "^9.0.2",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
-    "astro": "^4.4.11",
-    "typescript": "^5.3.3"
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/cloudflare": "^9.2.1",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.5",
+    "astro": "^4.9.2",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240222.0",
-    "wrangler": "^3.30.1"
+    "@cloudflare/workers-types": "^4.20240524.0",
+    "wrangler": "^3.57.1"
   }
 }
