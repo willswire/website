@@ -1,0 +1,35 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'current'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npx astro build
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy --project-name blog --branch ${{ github.head_ref || github.ref_name }} --commit-hash ${{ github.sha }} ./dist
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      
+    environment:
+      name: ${{ github.event.pull_request.head.ref || 'production' }}
