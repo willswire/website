@@ -5,9 +5,9 @@ pubDate: "Jul 07 2023"
 heroImage: "/cosmology.jpg"
 ---
 
-Working with Big Bang can be precarious. Especially when developing on a shared cluster with other team members. Recently, I created a [new project entitled Cosmology](https://gitlab.com/willswire/cosmology/-/tree/mtls), which serves as a playground for several of my personal "quests" in exploring novel functionality and features in [Platform One's Big Bang](https://repo1.dso.mil/big-bang/bigbang). To investigate my ideas and experiment on the cheap, I use the following:
+Working with Big Bang can be precarious. Especially when developing on a shared cluster with other team members. Recently, I created a [new project entitled Cosmology](https://github.com/willswire/cosmology/tree/mtls), which serves as a playground for several of my personal "quests" in exploring novel functionality and features in [Platform One's Big Bang](https://repo1.dso.mil/big-bang/bigbang). To investigate my ideas and experiment on the cheap, I use the following:
 
-- [Terraform](https://www.terraform.io) to dynamically provision infrastructure via [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
+- [Terraform](https://www.terraform.io) to dynamically provision infrastructure
 - Managed Kubernetes on [Symbiosis](https://symbiosis.host) (1/4th the cost of EKS on AWS!)
 - [Zarf](https://github.com/defenseunicorns/zarf) to package my configurations and deploy them to the cluster
 
@@ -41,7 +41,7 @@ On the other hand, configuring Istio within Big Bang to support mTLS is more inv
 
 The `istio/secret-tls.yaml` Big Bang template file [only exposes](https://repo1.dso.mil/big-bang/bigbang/-/blob/2.5.0/chart/templates/istio/secret-tls.yaml#L42) `tls.crt` and `tls.key` Istio keys, not the necessary `ca.crt` key [needed](https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/#key-formats) to enable mTLS.
 
-I forked Big Bang under my own namespace on GitLab, and it was easy enough to modify the template to include to support for passing values through to Istio, as demonstrated below in the following snippet:
+I forked Big Bang source, and it was easy enough to modify the template to include to support for passing values through to Istio, as demonstrated below in the following snippet:
 
 ```yaml
 apiVersion: v1
