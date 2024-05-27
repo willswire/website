@@ -34,3 +34,4 @@ jobs:
       
     environment:
       name: ${{ github.event.pull_request.head.ref || 'production' }}
+      url: ${{ github.event_name == 'pull_request' && format('https://{0}.blog-bnw.pages.dev', github.head_ref) || 'https://willswire.com' }}
