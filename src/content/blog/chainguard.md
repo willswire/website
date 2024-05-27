@@ -41,11 +41,11 @@ I started wondering how easy it would be to replace the container images in Big 
 
 ### 🔭 Find & Replace
 
-In the [latest version of Cosmology](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml), I have replaced enough of the Big Bang core images (Istio, Kyverno, Monitoring, Metrics Server, etc.) to no longer depend on Iron Bank images for my simple experiments and side-quests. Because Chainguard provides `latest` images for free, sometimes your Helm charts are subject to [breaking](https://gitlab.com/willswire/cosmology/-/blob/chainguard/main.yaml#L150) due to conflicting arguments and software versions. For my personal development efforts, this is a small price to pay for unlocking the ability to do multi-arch Big Bang deployments, something Iron Bank is still developing support for.
+In the [latest version of Cosmology](https://github.com/willswire/cosmology/blob/chainguard/main.yaml), I have replaced enough of the Big Bang core images (Istio, Kyverno, Monitoring, Metrics Server, etc.) to no longer depend on Iron Bank images for my simple experiments and side-quests. Because Chainguard provides `latest` images for free, sometimes your Helm charts are subject to [breaking](https://github.com/willswire/cosmology/blob/chainguard/main.yaml#L150) due to conflicting arguments and software versions. For my personal development efforts, this is a small price to pay for unlocking the ability to do multi-arch Big Bang deployments, something Iron Bank is still developing support for.
 
 ### 👨🏻‍🍳 Cheffing Up Images
 
-In addition to replacing the core images, I created my first image using apko and melange! Whenever I bring up my cluster *de novo*, the IP address for my public ingress gateway changes. To publish the new value to my Cloudflare DNS config, I developed a lightweight tool called clip (**Cl**oudflare **I**stio **P**ublisher). Originally a collection of bash scripts and a traditional Docker container, I rewrote the API calls [in go](https://gitlab.com/willswire/cosmology/-/tree/chainguard/packages/clip) and used melange's go pipelines along with apko to generate the image.
+In addition to replacing the core images, I created my first image using apko and melange! Whenever I bring up my cluster *de novo*, the IP address for my public ingress gateway changes. To publish the new value to my Cloudflare DNS config, I developed a lightweight tool called clip (**Cl**oudflare **I**stio **P**ublisher). Originally a collection of bash scripts and a traditional Docker container, I rewrote the API calls [in go](https://github.com/willswire/cosmology/tree/chainguard/packages/clip) and used melange's go pipelines along with apko to generate the image.
 
 It was shocking how easy and fast it was to produce my image.
 
@@ -120,4 +120,4 @@ In the spirit of Leonardo Da Vinci's insight that "Art is never finished, only a
 
 ---
 
-[^1]: Platform One's Iron Bank and Repo1 (GitLab) are entirely open to the public (available at IL-2). You can learn more about Platform One services [here](https://p1.dso.mil).
+[^1]: Platform One's Iron Bank and Repo1 are entirely open to the public (available at IL-2). You can learn more about Platform One services [here](https://p1.dso.mil).
