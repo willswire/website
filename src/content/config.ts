@@ -11,4 +11,14 @@ const writing = defineCollection({
   }),
 });
 
+const reading = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    coverImage: z.string().optional(),
+    yearRead: z.coerce.date().optional(),
+  }),
+});
+
 export const collections = { writing };
