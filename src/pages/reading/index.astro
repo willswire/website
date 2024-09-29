@@ -5,9 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
-const books = (await getCollection('reading')).sort(
-	(a, b) => b.data.yearRead.valueOf() - a.data.yearRead.valueOf()
-);
+const books = await getCollection('reading');
 
 const booksGroupedByYear = books.reduce((acc, book) => {
 	const year = book.data.yearRead;
@@ -25,24 +23,30 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				gap: 1.5rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
-				width: calc(33.33% - 1rem);
+				width: calc(25% - 1.5rem); /* Adjust to 20% to accommodate 5 items in a row */
+				box-sizing: border-box;
 			}
 			ul li * {
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
 			ul li img {
+				width: 100%;
+				height: 256px; /* Set a fixed height */
+				object-fit: cover; /* Ensures the image is cropped to fit the desired aspect ratio */
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
+				display: block;
 			}
 			ul li a {
 				display: block;
+				text-align: center;
 			}
 			.title {
 				margin: 0;
@@ -59,13 +63,28 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
 			}
+			@media (max-width: 1200px) {
+				ul li {
+					width: calc(33% - 1.33rem); /* 3 items per row on medium screens */
+				}
+			}
+			@media (max-width: 960px) {
+				ul li {
+					width: calc(50% - 1rem); /* 2 items per row on smaller screens */
+				}
+			}
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
 				}
 				ul li {
-					width: 100%;
+					width: calc(50% - 0.25rem); /* 2 items per row on mobile screens */
 					text-align: left;
+				}
+			}
+			@media (max-width: 480px) {
+				ul li {
+					width: 100%; /* 1 item per row on the smallest screens */
 				}
 			}
 		</style>
@@ -75,19 +94,19 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 		<main>
 			<section>
 				{
-					Object.entries(booksGroupedByYear).map(([year, books]) => (
+					Object.entries(booksGroupedByYear)
+					.sort(([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA))
+					.map(([year, books]) => (
 						<div>
 							<h3>{year}</h3>
 							<ul>
-							{
-								books.map((book) => (
-									<li>
-										<img width={720} height={360} src={book.data.coverImage} alt="" />
-										<h4 class="title" style="font-size: 1.5rem; font-weight: bold;">{book.data.title}</h4>
-										<p class="author" style="font-size: 1.2rem; color: var(--secondary-color);">{book.data.author}</p>
-									</li>
-								))
-							}
+								{
+									books.map((book) => (
+										<li>
+											<img src={book.data.coverImage} alt={`Cover of ${book.data.title}`} />
+										</li>
+									))
+								}
 							</ul>
 						</div>
 					))
