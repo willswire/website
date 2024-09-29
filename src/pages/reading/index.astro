@@ -97,7 +97,9 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 								{
 									books.map((book) => (
 										<li>
-											<img src={book.data.coverImage} alt={`Cover of ${book.data.title}`} />
+											<a href={`https://www.amazon.com/s?k=${encodeURIComponent(book.data.title + '+' + book.data.author)}`} target="_blank" rel="noopener noreferrer">
+												<img src={book.data.coverImage} alt={`Cover of ${book.data.title}`} />
+											</a>
 										</li>
 									))
 								}
