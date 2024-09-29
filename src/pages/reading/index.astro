@@ -37,8 +37,7 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 				transition: 0.2s ease;
 			}
 			ul li img {
-				width: 100%;
-				height: 256px; /* Set a fixed height */
+				aspect-ratio: 0.65;
 				object-fit: cover; /* Ensures the image is cropped to fit the desired aspect ratio */
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
@@ -73,19 +72,14 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 					width: calc(50% - 1rem); /* 2 items per row on smaller screens */
 				}
 			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: calc(50% - 0.25rem); /* 2 items per row on mobile screens */
-					text-align: left;
-				}
-			}
 			@media (max-width: 480px) {
-				ul li {
-					width: 100%; /* 1 item per row on the smallest screens */
-				}
+    			ul {
+    				gap: 0.5em;
+    			}
+    			ul li {
+    				width: calc(50% - 0.5rem); /* 2 items per row on mobile screens */
+    				text-align: left;
+    			}
 			}
 		</style>
 	</head>
