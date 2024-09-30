@@ -1,6 +1,6 @@
 # Will's Wire
 
-My [personal blog](https://willswire.com) is:
+My [personal website](https://willswire.com) is:
 
 - written in Markdown
 - designed by [Caden Kulp](https://cadens.studio)
