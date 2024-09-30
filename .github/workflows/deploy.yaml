@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22.2.0'
+          node-version: "22.2.0"
 
       - name: Install dependencies
         run: npm ci
@@ -27,11 +27,11 @@ jobs:
         run: npx astro build
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy --project-name blog --branch ${{ github.head_ref || github.ref_name }} --commit-hash ${{ github.sha }} ./dist
+        run: npx wrangler pages deploy --project-name website --branch ${{ github.head_ref || github.ref_name }} --commit-hash ${{ github.sha }} ./dist
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      
+
     environment:
       name: ${{ github.event.pull_request.head.ref || 'production' }}
-      url: ${{ github.event_name == 'pull_request' && format('https://{0}.blog-bnw.pages.dev', github.head_ref) || 'https://willswire.com' }}
+      url: ${{ github.event_name == 'pull_request' && format('https://{0}.website-sns.pages.dev', github.head_ref) || 'https://willswire.com' }}
