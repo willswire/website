@@ -69,17 +69,17 @@ const booksGroupedByYear = books.reduce((acc, book) => {
 			}
 			@media (max-width: 960px) {
 				ul li {
-					width: calc(50% - 1rem); /* 2 items per row on smaller screens */
-				}
+					width: calc(50% - 1.5rem); /* 2 items per row on smaller screens */
+							}
 			}
 			@media (max-width: 480px) {
-    			ul {
-    				gap: 0.5em;
-    			}
-    			ul li {
-    				width: calc(50% - 0.5rem); /* 2 items per row on mobile screens */
-    				text-align: left;
-    			}
+							ul {
+								gap: 0.5rem; /* Adjusted to make x and y gap equal */
+							}
+							ul li {
+								width: calc(50% - 0.5rem); /* 2 items per row on mobile screens */
+								text-align: left;
+							}
 			}
 		</style>
 	</head>
