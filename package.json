@@ -13,11 +13,11 @@
     "build-cf-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^9.2.1",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.5",
-    "astro": "^4.9.2",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^4.16.14",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
