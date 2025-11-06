@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Will's Wire · $if(title)$$title$$endif$</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div class="site-header">
+            <div class="site-title">WILL'S WIRE</div>
+            <nav>
+                <a href="/">home</a>
+                <a href="/writing">writing</a>
+                <a href="/reading">reading</a>
+            </nav>
+        </div>
+
+        $if(title)$
+        <header>
+            <h1>$title$</h1>
+            $if(date)$
+            <div class="meta">$date$</div>
+            $endif$
+        </header>
+        $endif$ $if(image)$
+        <div class="hero-image">
+            <img src="/$image$" alt="" />
+        </div>
+        $endif$
+
+        <article>$body$</article>
+
+        <footer>
+            <p>&copy; 2025 Will Walker</p>
+        </footer>
+    </body>
+</html>

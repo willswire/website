@@ -1,8 +1,8 @@
 ---
 title: "Cosmology: Chainguard in Big Bang"
 description: "Breaking free from the chains of Iron Bank"
-pubDate: "Apr 01 2024"
-heroImage: "/chainguard.jpg"
+date: "Apr 01 2024"
+image: "chainguard.jpg"
 ---
 
 Containers are pretty cool. Several years ago, I first learned about them during an internship with my university's IT department.

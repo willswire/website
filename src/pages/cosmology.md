@@ -1,8 +1,7 @@
 ---
 title: "Cosmology: mTLS in Big Bang"
-description: "Getting started with my personal deployment of Big Bang"
-pubDate: "Jul 07 2023"
-heroImage: "/cosmology.jpg"
+date: "Jul 07 2023"
+image: "cosmology.jpg"
 ---
 
 Working with Big Bang can be precarious. Especially when developing on a shared cluster with other team members. Recently, I created a [new project entitled Cosmology](https://github.com/willswire/cosmology/tree/mtls), which serves as a playground for several of my personal "quests" in exploring novel functionality and features in [Platform One's Big Bang](https://repo1.dso.mil/big-bang/bigbang). To investigate my ideas and experiment on the cheap, I use the following:
