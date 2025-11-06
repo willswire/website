@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+:root {
+    --font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, sans-serif;
+    --font-family-code: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+    --body-color: #fff;
+    --body-color-medium: #f3f3f3;
+    --body-color-light: #f9f9f9;
+    --text-color: #1e2124;
+    --text-color-medium: #636363;
+    --text-color-light: #767676;
+    --accent-color: #2b5945;
+    --max-width: 720px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-color: #1e2124;
+        --body-color-medium: #2f3234;
+        --body-color-light: #494a4b;
+        --text-color: #fff;
+        --text-color-medium: #b9b9b9;
+        --text-color-light: #9b9b9b;
+        --accent-color: #4e8af7;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--body-color);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: greyscale;
+    transition:
+        background-color 0.25s,
+        color 0.25s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+::selection {
+    color: var(--body-color);
+    background: var(--accent-color);
+}
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--text-color-medium);
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+}
+
+ol li {
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+ol li::marker {
+    color: var(--text-color-medium);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: opacity 0.25s;
+}
+
+a:hover {
+    opacity: 0.65;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: -0.015em;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--body-color-medium);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+strong {
+    font-weight: 600;
+}
+
+code {
+    font-family: var(--font-family-code);
+    color: var(--text-color-medium);
+    font-size: 0.9em;
+    background: var(--body-color-medium);
+    padding: 0.125rem 0.375rem;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: var(--font-family-code);
+    background: var(--body-color-medium);
+    border: 1px solid var(--body-color-light);
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+pre code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.875rem;
+}
+
+blockquote {
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-color-medium);
+    border-left: 4px solid var(--accent-color);
+    background: var(--body-color-light);
+}
+
+blockquote p:first-child {
+    margin-top: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+figcaption {
+    color: var(--text-color-light);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.hero-image {
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+table {
+    margin: 1.5rem auto;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--body-color-medium);
+    font-size: 0.875rem;
+}
+
+th {
+    border-bottom: 1px solid var(--text-color-medium);
+    padding: 0.5rem 1rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--body-color-medium);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--body-color-medium);
+    margin: 2rem 0;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--body-color-medium);
+}
+
+.site-title {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 700;
+    font-stretch: ultra-expanded;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.25s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.meta {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+}
+
+article {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+article h3 + ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 0 0 2rem 0;
+}
+
+article h3 + ul li {
+    padding: 0;
+}
+
+article h3 + ul li:before {
+    content: none;
+}
+
+article h3 + ul li a {
+    display: block;
+    transition: transform 0.2s;
+}
+
+article h3 + ul li a:hover {
+    transform: scale(1.05);
+}
+
+article h3 + ul li img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+}

@@ -1,8 +1,7 @@
 ---
 title: "ChatAFI: Embedding Air Force Publications into ChatGPT"
-description: "Exploring RAG and developing a ChatGPT plugin"
 pubDate: "Aug 13 2023"
-heroImage: "/chat-afi.jpg"
+image: "chat-afi.jpg"
 ---
 
 > **January 2024**: The ChatAFI ChatGPT Plugin has been deprecated in favor of the latest update to [AFI Explorer](https://afiexplorer.com)
