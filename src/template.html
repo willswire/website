@@ -3,7 +3,106 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>WILL'S WIRE</title>
+
+        <!-- Title -->
+        <title>
+            $if(title)$$title$ - WILL'S WIRE$else$WILL'S WIRE - Software
+            Engineering & Cloud Architecture$endif$
+        </title>
+
+        <!-- Basic Meta Tags -->
+        <meta
+            name="description"
+            content="$if(description)$$description$$else$Software engineering insights, cloud architecture, and technical writing by Will Walker$endif$"
+        />
+        <meta name="author" content="Will Walker" />
+        <meta
+            name="keywords"
+            content="$if(keywords)$$keywords$$else$software engineering, cloud architecture, kubernetes, devops, security, mtls$endif$"
+        />
+        $if(date)$
+        <meta name="publish-date" content="$date$" />
+        $endif$
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://willswire.com$if(url)$$url$$else$/$endif$"
+        />
+
+        <!-- OpenGraph Meta Tags -->
+        <meta property="og:site_name" content="WILL'S WIRE" />
+        <meta
+            property="og:title"
+            content="$if(title)$$title$$else$WILL'S WIRE$endif$"
+        />
+        <meta
+            property="og:description"
+            content="$if(description)$$description$$else$Software engineering insights, cloud architecture, and technical writing by Will Walker$endif$"
+        />
+        <meta
+            property="og:type"
+            content="$if(title)$article$else$website$endif$"
+        />
+        <meta
+            property="og:url"
+            content="https://willswire.com$if(url)$$url$$else$/$endif$"
+        />
+        $if(image)$
+        <meta property="og:image" content="https://willswire.com/$image$" />
+        <meta
+            property="og:image:alt"
+            content="$if(title)$$title$$else$WILL'S WIRE$endif$"
+        />
+        $endif$
+        <meta property="og:locale" content="en_US" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="$if(title)$$title$$else$WILL'S WIRE$endif$"
+        />
+        <meta
+            name="twitter:description"
+            content="$if(description)$$description$$else$Software engineering insights, cloud architecture, and technical writing by Will Walker$endif$"
+        />
+        $if(image)$
+        <meta name="twitter:image" content="https://willswire.com/$image$" />
+        $endif$
+
+        <!-- Additional Meta Tags -->
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "$if(title)$Article$else$WebSite$endif$",
+              $if(title)$"headline": "$title$",
+              "author": {
+                "@type": "Person",
+                "name": "Will Walker",
+                "url": "https://willswire.com"
+              },
+              $if(date)$"datePublished": "$date$",
+              "dateModified": "$date$",$endif$
+              $if(description)$"description": "$description$",$endif$
+              $if(image)$"image": "https://willswire.com/$image$",$endif$
+              "publisher": {
+                "@type": "Person",
+                "name": "Will Walker"
+              },$else$"name": "WILL'S WIRE",
+              "description": "Software engineering insights, cloud architecture, and technical writing by Will Walker",
+              "url": "https://willswire.com",
+              "author": {
+                "@type": "Person",
+                "name": "Will Walker"
+              }$endif$
+            }
+        </script>
+
         <link rel="stylesheet" href="/style.css" />
     </head>
     <body>

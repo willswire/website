@@ -1,6 +1,6 @@
 build:
     mkdir -p dist
-    cp src/images/* src/style.css dist/
+    cp src/images/* src/style.css src/robots.txt dist/
     for file in src/pages/*.md; do \
         pandoc "$file" \
             --output "dist/$(basename "$file" .md).html" \
