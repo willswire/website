@@ -1,3 +1,10 @@
+---
+title: "Reading"
+description: "Books I've read on theology, philosophy, technology, and personal development from 2019 to present"
+keywords: "reading list, book recommendations, theology books, technology books, personal development"
+url: "/reading"
+---
+
 ### 2025
 
 - [![The Holiness of God](/holiness-god.jpg)](https://www.amazon.com/s?k=The%20Holiness%20of%20God%2BR.C.%20Sproul){target="_blank"}
