@@ -11,3 +11,6 @@ build:
 
 dev:
     wrangler dev --live-reload
+
+deploy:
+    wrangler deploy
