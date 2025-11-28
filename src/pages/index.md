@@ -4,4 +4,4 @@ keywords: "Will Walker, platform engineer, software engineering, cloud architect
 url: "/"
 ---
 
-Hey, I'm Will. I'm a platform engineer with a passion for modernizing legacy applications. In my spare time, I work on [AFI Explorer](https://afiexplorer.com), push code to [GitHub](https://github.com/willswire), and make [music](https://linktr.ee/willwalkermusic). Most importantly, I'm learning how to become more like Christ.
+Hey, I'm Will. I'm a platform engineer with a passion for modernizing legacy applications. In my spare time, I work on [AFI Explorer](https://afiexplorer.com), push code to [GitHub](https://github.com/willswire), and make [music](https://linktr.ee/willwalkermusic).
