@@ -367,6 +367,7 @@ article > ul li:before {
 footer {
     margin-top: auto;
     padding-top: 2rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
     color: var(--text-color-light);
     font-size: 0.9rem;
     text-align: center;
