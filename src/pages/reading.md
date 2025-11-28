@@ -1,15 +1,21 @@
 ---
-title: "Reading"
 description: "Books I've read on theology, philosophy, technology, and personal development from 2019 to present"
 keywords: "reading list, book recommendations, theology books, technology books, personal development"
 url: "/reading"
 ---
-
 ### 2025
 
+- [![All Systems Red: The Murderbot Diaries](/all-systems-red.jpg)](https://www.amazon.com/s?k=All%20Systems%20Red%3A%20The%20Murderbot%20Diaries%2BMartha%20Wells){target="_blank"}
+- [![The Cure: What If God Isn't Who You Think He Is And Neither Are You](/the-cure.jpg)](https://www.amazon.com/s?k=The%20Cure%3A%20What%20If%20God%20Isn't%20Who%20You%20Think%20He%20Is%20And%20Neither%20Are%20You%2BJohn%20Lynch%2C%20Bruce%20McNicol%2C%20Bill%20Thrall){target="_blank"}
 - [![The Holiness of God](/holiness-god.jpg)](https://www.amazon.com/s?k=The%20Holiness%20of%20God%2BR.C.%20Sproul){target="_blank"}
+- [![James For You: Showing you how real faith looks in real life (God's Word For You)](/james-for-you.jpg)](https://www.amazon.com/s?k=James%20For%20You%3A%20Showing%20you%20how%20real%20faith%20looks%20in%20real%20life%20(God's%20Word%20For%20You)%2BSam%20Allberry){target="_blank"}
+- [![Living Life Backward: How Ecclesiastes Teaches Us to Live in Light of the End](/living-life-backward.jpg)](https://www.amazon.com/s?k=Living%20Life%20Backward%3A%20How%20Ecclesiastes%20Teaches%20Us%20to%20Live%20in%20Light%20of%20the%20End%2BDavid%20Gibson){target="_blank"}
+- [![Platform Engineering](/platform-engineering.jpg)](https://www.amazon.com/s?k=Platform%20Engineering%2BCamille%20Fournier%2C%20Ian%20Nowland){target="_blank"}
 - [![Prodigal God](/prodigal-god.jpg)](https://www.amazon.com/s?k=Prodigal%20God%2BTim%20Keller){target="_blank"}
 - [![Scythe](/scythe.jpg)](https://www.amazon.com/s?k=Scythe%2BNeal%20Shusterman){target="_blank"}
+- [![Slow Horses (Slough House)](/slow-horses.jpg)](https://www.amazon.com/s?k=Slow%20Horses%20(Slough%20House)%2BMick%20Herron){target="_blank"}
+- [![Thunderhead (Arc of a Scythe Book 2)](/thunderhead.jpg)](https://www.amazon.com/s?k=Thunderhead%20(Arc%20of%20a%20Scythe%20Book%202)%2BNeal%20Shusterman){target="_blank"}
+- [![The Toll (Arc of a Scythe Book 3)](/the-toll.jpg)](https://www.amazon.com/s?k=The%20Toll%20(Arc%20of%20a%20Scythe%20Book%203)%2BNeal%20Shusterman){target="_blank"}
 
 ### 2024
 

@@ -339,6 +339,10 @@ article {
     flex: 1;
 }
 
+article > *:first-child {
+    margin-top: 0.5rem;
+}
+
 article h3 {
     font-family: var(--font-family-code);
     color: var(--text-color-medium);
