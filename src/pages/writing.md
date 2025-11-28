@@ -1,5 +1,4 @@
 ---
-title: "Writing"
 description: "Technical writing and blog posts about software engineering, cloud architecture, Kubernetes, and security"
 keywords: "technical writing, software engineering blog, cloud architecture, kubernetes, DevOps, security, mTLS"
 url: "/writing"

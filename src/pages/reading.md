@@ -1,10 +1,8 @@
 ---
-title: "Reading"
 description: "Books I've read on theology, philosophy, technology, and personal development from 2019 to present"
 keywords: "reading list, book recommendations, theology books, technology books, personal development"
 url: "/reading"
 ---
-
 ### 2025
 
 - [![All Systems Red: The Murderbot Diaries](/all-systems-red.jpg)](https://www.amazon.com/s?k=All%20Systems%20Red%3A%20The%20Murderbot%20Diaries%2BMartha%20Wells){target="_blank"}
